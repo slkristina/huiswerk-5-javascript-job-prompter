@@ -72,3 +72,6 @@ const departments = {
 }
 
 console.log(departments);
+
+//--------1a--------
+console.log(`The department Sales has ${departments.sales.numberOfEmployees} employees`);
