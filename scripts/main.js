@@ -71,7 +71,6 @@ const departments = {
     }
 }
 
-//--------2a--------
 let userInput = prompt(
     `
     Over welke afdeling wil je meer informatie?
@@ -80,24 +79,7 @@ let userInput = prompt(
     1. Marketing
     2. Sales
     3. Customer Service
-    `);
-console.log(userInput);
-
-//-------- 2b + 2c --------
-switch (userInput) {
-    case "marketing":
-        console.log(`Je koos ${userInput}. Marketing omvat verschillende strategieën en activiteiten gericht op het promoten van producten, diensten of merken bij het doelpubliek. Het omvat het begrijpen van de behoeften en voorkeuren van consumenten, het uitvoeren van marktonderzoek, het ontwikkelen van marketingplannen en het implementeren van tactieken om potentiële klanten te bereiken en te betrekken. Marketingprofessionals analyseren markttrends, identificeren doelmarkten en creëren overtuigende boodschappen en communicatiestrategieën om merkbekendheid op te bouwen, klantenwerving te stimuleren en klantloyaliteit te bevorderen.`);
-        break;
-    case "sales":
-        console.log(`Je koos ${userInput}. Sales omvat activiteiten en strategieën die gericht zijn op het genereren van omzet door het verkopen van producten, diensten of oplossingen aan klanten. Het draait om het opbouwen van relaties, het identificeren van klantbehoeften en het overtuigend communiceren van de waarde en voordelen van een product of dienst aan potentiële kopers. Verkoopprofessionals spelen een cruciale rol bij het stimuleren van bedrijfsgroei en het behalen van omzetdoelstellingen. Ze zoeken naar en kwalificeren leads, hebben directe interacties met klanten, onderhandelen over contracten en sluiten deals.`);
-        break;
-    case "customer-service":
-        console.log(`Je koos ${userInput}. Klantenservice richt zich op het bieden van uitzonderlijke ondersteuning en assistentie aan klanten vóór, tijdens en na hun interacties met een bedrijf. Het draait om het opbouwen van positieve relaties met klanten en ervoor zorgen dat ze tevreden zijn door hun vragen, zorgen en behoeften aan te pakken. Klantenserviceprofessionals fungeren als de vertegenwoordigers van een bedrijf, als het eerste aanspreekpunt voor klanten. Ze maken gebruik van verschillende communicatiekanalen, zoals telefoongesprekken, e-mails, live chats of persoonlijke interacties, om klanten op een vriendelijke, efficiënte en empathische manier te helpen.`);
-        break;
-    default:
-        console.error("This is an error message");
-        break;
-}
+`);
 
 if (departments[userInput]) {
     const jobAmount = departments[userInput].jobs.length
@@ -105,26 +87,25 @@ if (departments[userInput]) {
         .map((job, index) => `${index + 1} ${job.title}`)
         .join("\n")
 
-    console.log(jobTitleArray);
-
     let jobChoice = prompt(
-`Je koos ${userInput}.
+        `Je koos ${userInput}.
 Over welke functie wil je meer weten?
 Voer een getal tussen 0 en ${jobAmount}.
 ${jobTitleArray}
 `);
 
-    //--------4c--------
     if (jobChoice !== null && !isNaN(jobChoice) && jobChoice >= 0 && jobChoice <= departments[userInput].jobs.length) {
         let selectedJob = departments[userInput].jobs[jobChoice - 1];
         document.getElementById('role-title').textContent = `${selectedJob.title}`
         document.getElementById('department-description').textContent = `${departments[userInput].description}`
         document.getElementById('role-description').textContent = `${selectedJob.description}`
     } else {
-        alert("Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.");
+        document.getElementById('error-message').textContent = `Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.`
     }
 } else {
-    alert("Ongeldige afdelingsnaam. Zorg ervoor dat je exact typt: marketing, sales of customer-service.");
+    document.getElementById('error-message').textContent = `Ongeldige afdelingsnaam. Zorg ervoor dat je exact typt: marketing, sales of customer-service.`
+
+
 }
 
 
