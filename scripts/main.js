@@ -94,7 +94,7 @@ Voer een getal tussen 0 en ${jobAmount}.
 ${jobTitleArray}
 `);
 
-    if (jobChoice !== null && !isNaN(jobChoice) && jobChoice >= 0 && jobChoice <= departments[userInput].jobs.length) {
+    if ((jobChoice !== null) && (!isNaN(jobChoice)) && (0 >= jobChoice <= departments[userInput].jobs.length)) {
         let selectedJob = departments[userInput].jobs[jobChoice - 1];
         document.getElementById('role-title').textContent = `${selectedJob.title}`
         document.getElementById('department-description').textContent = `${departments[userInput].description}`
@@ -105,8 +105,5 @@ ${jobTitleArray}
 } else {
     document.getElementById('error-message').textContent = `Ongeldige afdelingsnaam. Zorg ervoor dat je exact typt: marketing, sales of customer-service.`
 
-
 }
 
-
-//--------4c--------
