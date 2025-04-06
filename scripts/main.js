@@ -81,3 +81,6 @@ console.log(`Marketing is a fun department to work in. Marketing omvat verschill
 
 //--------1c--------
 console.log(`The Customer Service department has ${departments["customer-service"].numberOfEmployees} employees`);
+
+//--------1d--------
+console.log(`Sales is a challenging department to work as a Sales Manager. Sales omvat activiteiten en strategieën die gericht zijn op het genereren van omzet door het verkopen van producten, diensten of oplossingen aan klanten. Het draait om het opbouwen van relaties, het identificeren van klantbehoeften en het overtuigend communiceren van de waarde en voordelen van een product of dienst aan potentiële kopers. Verkoopprofessionals spelen een cruciale rol bij het stimuleren van bedrijfsgroei en het behalen van omzetdoelstellingen. Ze zoeken naar en kwalificeren leads, hebben directe interacties met klanten, onderhandelen over contracten en sluiten deals.`)
