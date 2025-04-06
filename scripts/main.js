@@ -75,3 +75,6 @@ console.log(departments);
 
 //--------1a--------
 console.log(`The department Sales has ${departments.sales.numberOfEmployees} employees`);
+
+//--------1b--------
+console.log(`Marketing is a fun department to work in. Marketing omvat verschillende strategieën en activiteiten gericht op het promoten van producten, diensten of merken bij het doelpubliek. Het omvat het begrijpen van de behoeften en voorkeuren van consumenten, het uitvoeren van marktonderzoek, het ontwikkelen van marketingplannen en het implementeren van tactieken om potentiële klanten te bereiken en te betrekken. Marketingprofessionals analyseren markttrends, identificeren doelmarkten en creëren overtuigende boodschappen en communicatiestrategieën om merkbekendheid op te bouwen, klantenwerving te stimuleren en klantloyaliteit te bevorderen.`);
